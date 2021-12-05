@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz game</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/tailwind.css">
+    <link rel="stylesheet" href="./assets/css/fizzbuzz.css">
+    <!-- font-family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <style>
+        .nunito {
+            font-family: 'Nunito', sans-serif;
+        }
+    </style>
+
+</head>
+
+<body class="nunito relative">
+    <img src="http://www.worldanvil.com/uploads/images/bee90d618dda813fcd7621abfeaed9bb.jpg" class="w-screen h-screen"
+        alt="">
+    <form class="border bg-white p-5 container mx-auto my-auto absolute inset-0 h-64 shadow-2xl rounded-md"
+        style="width: 500px;">
+        <h1 class="capitalize text-5xl font-bold my-5 text-center">FizzBuzz game</h1>
+        <div class="px-5 space-y-5">
+            <input type="text" id="count"
+                class="border border-gray-400 block w-full py-2 pl-3 rounded-md outline-none focus:border-blue-500"
+                placeholder="">
+            <button id="btn"
+                class="bg-blue-500 border border-blue-500 hover:bg-white block w-full py-2 rounded-md hover:font-bold animated hover:animate-pulse">Click
+                me!</button>
+        </div>
+    </form>
+
+    <script>
+        // const checkNumber = () => {
+        document.getElementById("btn").addEventListener("click", () => {
+            var count = document.getElementById("count").value;
+
+            if (isNaN(count)) {
+                alert("Value not a number!");
+            } else {
+                if (count >= 1 && count <= 100) {
+                    if ((count % 3 == 0) && (count % 5 == 0)) {
+                        alert("FizzBuzz!")
+                    } else if (count % 5 == 0) {
+                        alert("Buzz!")
+                    } else {
+                        alert("Fizz")
+                    }
+                } else {
+                    alert("Value must between 1 - 100!");
+                }
+            }
+        })
+
+        // }
+    </script>
+</body>
+
+</html>
